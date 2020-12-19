@@ -1,0 +1,110 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[dvips]{graphicx}
+\usepackage{epsfig}
+\usepackage{fancybox}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{latexsym}
+\usepackage{alltt}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[hmargin=3cm,vmargin=5.0cm]{geometry}
+\topmargin=-1.8cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+\newcommand{\HRule}{\rule{\linewidth}{1mm}}
+\newcommand{\kutu}[2]{\framebox[#1mm]{\rule[-2mm]{0mm}{#2mm}}}
+\newcommand{\gap}{ \\[1mm] }
+
+\newcommand{\Q}{\raisebox{1.7pt}{$\scriptstyle\bigcirc$}}
+
+\lstset{
+    %backgroundcolor=\color{lbcolor},
+    tabsize=2,
+    language=C++,
+    basicstyle=\footnotesize,
+    numberstyle=\footnotesize,
+    aboveskip={0.0\baselineskip},
+    belowskip={0.0\baselineskip},
+    columns=fixed,
+    showstringspaces=false,
+    breaklines=true,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    %frame=single,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    identifierstyle=\ttfamily,
+    keywordstyle=\color[rgb]{0,0,1},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+
+
+\begin{document}
+
+
+
+\noindent
+\HRule \\[3mm]
+\small
+\begin{tabular}[b]{lp{3.8cm}r}
+{} Middle East Technical University &  &
+{} Department of Computer Engineering \\
+\end{tabular} \\
+\begin{center}
+
+                 \LARGE \textbf{CENG 223} \\[4mm]
+                 \Large Discrete Computational Structures \\[4mm]
+                \normalsize Fall '2020-2021 \\
+                    \Large Homework 3 \\
+                \normalsize Student Name and Surname: Mustafa Ilbey Deniz  \\
+                \normalsize Student Number: 244831 \\
+\end{center}
+\HRule
+
+
+\section*{Question 1}
+\hspace{1cm} By Fermat's Little Theorem, \[ 2^{22}=4^{11}\equiv 4(mod\hspace{2pt}11)\]
+\[4^{44}={(4^4)}^{11}\equiv4^4\equiv256\equiv3(mod\hspace{2pt}11)\]
+\[6^{66}={(6^6)^{11}\equiv6^6\equiv36*36*36\equiv3*3*3\equiv5(mod\hspace{2pt}11)}
+\]
+\[8^{88}={(8^8)}^{11}\equiv8^8\equiv2^{24}\equiv4^{11}*4\equiv4*4\equiv5(mod\hspace{2pt}11)\]
+\[10^{110}={(10^{10})^{11}}\equiv10^{10}\equiv 1(mod \hspace{2pt} 11)\]
+\hspace{1cm} Therefore,
+\[4+3+5+5+1\equiv7(mod \hspace{2pt}11)\]
+
+\section*{Question 2}
+\[7n+4 = (5n+3)*1 + 2n+1\]
+\[5n+3 = (2n+1)*2 + n+1\]
+\[2n+1 = (n+1)*1 + n\]
+\[n+1 = (n)*1 + 1\]
+\[n = (1)*n + 0\]
+\hspace{1cm}Therefore, $gcd(7n+4,5n+3) = 1$.
+\newpage
+\section*{Question 3}
+\hspace{1cm}Given that $m^2=n^2+kx$,
+\[m^2-n^2=kx\]
+\[(m+n)(m-n)=kx\]
+\[x\mid(m+n)(m-n)\]
+\hspace{1cm}Suppose $p\mid(m-n)$ is false, which results in gcd(m-n,p)=1 since p is prime. By Euclid's Lemma, which states if $a\mid bc$ and gcd(a,b)=1, then $a\mid c$ must be true where a,b,c are integers,
+\[x\mid (m+n)\] must be true. The case where $p\mid(m+n)$ is false is similar. Therefore $x\mid(m+n)$ or $x\mid(m-n)$ must be true.
+
+\section*{Question 4}
+\hspace{1cm}(Base case) For n=1, $\frac{n(3n-1)}{2}=1$  is true.
+For some n=k, say
+\[1 + 4 + 7 \hspace{2pt} ... \hspace{2pt} 3k-2 = \frac{k(3k-1)}{2}\]
+\hspace{1cm}If it is also true for n=k+1, this will prove our claim.
+\[\frac{k(3k-1)}{2}+3k+1\stackrel{?}{=}\frac{(k+1)(3k+2)}{2}\]
+\[k(3k-1)+6k+2\stackrel{?}{=}(k+1)(3k+2)\]
+\[3k^2-k+6k+2=3k^2+2k+3k+2\]
+\hspace{1cm}Therefore, our claim is true for n=k+1 which makes our claim true for all n$\geq$1.
+\end{document}
+
